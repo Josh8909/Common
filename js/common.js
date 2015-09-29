@@ -1,19 +1,21 @@
 /*
-  This is the common js file
-  */
-
-  function toFixed (origin, len, prefix) {
-  	origin = origin.toString();
-  	if (origin.length > len) 
-  		return origin.substr(origin.length - len);
-  	else if (origin.length == len) 
-  		return origin;
-  	else {
-	  	var result = '';
-	  	for (var i = 0, max = len - origin.length; i < max; i++) {
-	  		result += prefix;
-	  	}		
-	  	result += origin;
-	  	return result;
-  	}
-  }
+ * 格式化指定的对象<Number or String>
+ * @param origin 数据
+ *        len    数据长度
+ *        prefix 补全字符
+ */
+function toFixed (origin, len, prefix) {
+	origin = origin.toString();
+	if (origin.length > len) 
+		return origin.substr(origin.length - len);
+	else if (origin.length == len) 
+		return origin;
+	else {
+		var result = '';
+		for (var i = 0, max = len - origin.length; i < max; i++) {
+			result += prefix;
+		}		
+		result += origin;
+		return result;
+	}
+}
