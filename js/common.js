@@ -39,7 +39,7 @@ function extend(base, __proto__) {
 		F.prototype.base = base;
 	}
 
-	for ( var item in __proto__) {
+	for (var item in __proto__) {
 		if (__proto__.hasOwnProperty(item))
 			F.prototype[item] = __proto__[item];
 	}
