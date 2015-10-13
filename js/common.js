@@ -26,23 +26,23 @@ function extend(base, __proto__) {
 
 	function F(initializing) {
 		if (initializing && typeof initializing === 'boolean') {
-			// Do Nothing
-		} else {
-			this.base && this.base.prototype.constructor.apply(this, arguments);
-			this.constructor.apply(this, arguments);
-		}
-		return this;
-	}
+            // Do Nothing
+        } else {
+        	this.base && this.base.prototype.constructor.apply(this, arguments);
+        	this.constructor.apply(this, arguments);
+        }
+        return this;
+    }
 
-	if (base) {
-		F.prototype = new base(true);
-		F.prototype.base = base;
-	}
+    if (base) {
+    	F.prototype = new base(true);
+    	F.prototype.base = base;
+    }
 
-	for (var item in __proto__) {
-		if (__proto__.hasOwnProperty(item))
-			F.prototype[item] = __proto__[item];
-	}
+    for (var item in __proto__) {
+    	if (__proto__.hasOwnProperty(item))
+    		F.prototype[item] = __proto__[item];
+    }
 
-	return F;
+    return F;
 }
