@@ -18,6 +18,7 @@ function toFixed(origin, len, prefix) {
     }
 }
 
+//Define the inheir method for function
 function extend(base, __proto__) {
     if (typeof base === 'object') {
         __proto__ = base;
@@ -26,14 +27,14 @@ function extend(base, __proto__) {
 
     function F(initializing) {
         if (initializing && typeof initializing === 'boolean') {
-            // Do Nothing
+            //Do Nothing
         } else {
             this.base && this.base.prototype.constructor.apply(this, arguments);
             this.constructor.apply(this, arguments);
         }
         return this;
     }
-
+    
     if (base) {
         F.prototype = new base(true);
         F.prototype.base = base;
