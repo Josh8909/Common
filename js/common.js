@@ -1,4 +1,4 @@
-z/*
+/*
  * 格式化指定的对象<Number or String>
  * @param origin 数据
  *        len    数据长度
@@ -22,30 +22,30 @@ z/*
 
 
  function extend(base, __proto__) {
- 	if (typeof base === 'object') {
- 		__proto__ = base;
- 		base = null;
- 	}
+	if (typeof base === 'object') {
+		__proto__ = base;
+		base = null;
+	}
 
- 	function F(initializing) {
- 		if (initializing && typeof initializing === 'boolean') {
+	function F(initializing) {
+		if (initializing && typeof initializing === 'boolean') {
 			//Do Nothing
-                    } else {
-                    	this.base && this.base.prototype.constructor.apply(this, arguments);
-                    	this.constructor.apply(this, arguments);
-                    }
-                    return this;
-                }
+		} else {
+			this.base && this.base.prototype.constructor.apply(this, arguments);
+			this.constructor.apply(this, arguments);
+		}
+		return this;
+	}
 
-                if (base) {
-                	F.prototype = new base(true);
-                	F.prototype.base = base;
-                }
+	if (base) {
+		F.prototype = new base(true);
+		F.prototype.base = base;
+	}
 
-                for (var item in __proto__) {
-                	if (__proto__.hasOwnProperty(item)) 
-                		F.prototype[item] = __proto__[item];
-                }
+	for (var item in __proto__) {
+		if (__proto__.hasOwnProperty(item)) 
+			F.prototype[item] = __proto__[item];
+	}
 
-                return F;
-            }
+	return F;
+}
