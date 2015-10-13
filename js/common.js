@@ -1,9 +1,7 @@
-/*
- * 格式化指定的对象<Number or String>
- * @param origin 数据
- *        len    数据长度
- *        prefix 补全字符
- */
+//格式化指定的对象<Number or String>
+//@param origin 数据
+//       len    数据长度
+//       prefix 补全字符
 function toFixed (origin, len, prefix) {
 	origin = origin.toString();
 	if (origin.length > len) 
