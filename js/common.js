@@ -22,13 +22,13 @@
 
 
  function extend(base, __proto__) {
-	if (typeof base === 'object') {
-		__proto__ = base;
-		base = null;
-	}
+ 	if (typeof base === 'object') {
+ 		__proto__ = base;
+ 		base = null;
+ 	}
 
-	function F(initializing) {
-		if (initializing && typeof initializing === 'boolean') {
+ 	function F(initializing) {
+ 		if (initializing && typeof initializing === 'boolean') {
 			//Do Nothing
 		} else {
 			this.base && this.base.prototype.constructor.apply(this, arguments);
