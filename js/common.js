@@ -18,6 +18,9 @@ function toFixed(origin, len, prefix) {
     }
 }
 
+function random() {
+}
+
 //Define the inheir method for function
 function extend(base, __proto__) {
     if (typeof base === 'object') {
